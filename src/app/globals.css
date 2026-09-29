@@ -1,0 +1,417 @@
+:root {
+    --bg: #F3F5F8;
+    --ink: #152233;
+    --pri: #1F5FBF;
+    --navy: #0E2942;
+    --surf: #fff;
+    --danger: #C0392B;
+    --muted: #5F6E80;
+    --line: #DCE2EA
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box
+}
+
+body {
+    color: var(--ink);
+    font: 400 15px/1.5 var(--font-body), system-ui, sans-serif;
+    margin: 0;
+    background: var(--bg)
+}
+
+h1,
+h2 {
+    font-weight: 600;
+    margin: 0
+}
+
+h1 {
+    font-size: 24px
+}
+
+h2 {
+    font-size: 18px
+}
+
+button,
+input,
+select,
+textarea {
+    color: inherit;
+    font: inherit
+}
+
+:focus-visible {
+    outline-offset: 2px;
+    outline: 2px solid var(--pri)
+}
+
+.btn {
+    text-decoration: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    display: inline-block;
+    font-weight: 500;
+    background: var(--pri);
+    color: #fff;
+    border: 0
+}
+
+.btn:hover {
+    background: var(--navy)
+}
+
+.btn.ghost {
+    border: 1px solid var(--line);
+    background: var(--surf);
+    color: var(--ink)
+}
+
+.btn.ghost:hover {
+    background: #EEF3FA
+}
+
+input,
+select,
+textarea {
+    padding: 8px 12px;
+    background: #fff;
+    border-radius: 6px;
+    width: 100%;
+    border: 1px solid var(--line)
+}
+
+label {
+    margin-bottom: 14px;
+    font-weight: 500;
+    display: block
+}
+
+label span {
+    margin-bottom: 4px;
+    display: block;
+    font-size: 13px;
+    color: var(--muted)
+}
+
+.login {
+    padding: 24px;
+    min-height: 100vh;
+    place-items: center;
+    display: grid
+}
+
+.login form {
+    padding: 32px;
+    border-radius: 8px;
+    width: min(360px, 100%);
+    background: var(--surf);
+    border: 1px solid var(--line)
+}
+
+.login p {
+    margin: 6px 0 24px;
+    color: var(--muted)
+}
+
+.login .btn {
+    padding: 10px;
+    width: 100%
+}
+
+.login p.erro,
+.erro {
+    margin: 0 0 12px;
+    color: var(--danger);
+    font-size: 14px
+}
+
+.app {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 232px 1fr
+}
+
+aside {
+    gap: 2px;
+    padding: 24px 14px;
+    background: var(--navy);
+    color: #F3F5F8;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column
+}
+
+.brand {
+    padding: 0 10px 22px;
+    font-size: 20px;
+    font-weight: 700
+}
+
+aside a,
+aside button.lnk {
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    padding: 8px 10px;
+    background: none;
+    color: #F3F5F8cc;
+    border: 0;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none
+}
+
+aside a:hover,
+aside button.lnk:hover {
+    background: #ffffff14
+}
+
+aside a.on {
+    font-weight: 500;
+    color: #fff;
+    background: var(--pri)
+}
+
+aside .soon {
+    padding: 8px 10px;
+    display: flex;
+    justify-content: space-between;
+    opacity: .5
+}
+
+aside small {
+    font-size: 12px
+}
+
+aside form {
+    margin-top: auto
+}
+
+main {
+    width: 100%;
+    padding: 36px clamp(20px, 4vw, 52px) 60px;
+    max-width: 1040px
+}
+
+.head {
+    flex-wrap: wrap;
+    gap: 12px;
+    display: flex;
+    margin-bottom: 24px;
+    align-items: center;
+    justify-content: space-between
+}
+
+.stats {
+    margin-bottom: 34px;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr))
+}
+
+.stat {
+    padding: 14px 16px;
+    border-radius: 6px;
+    background: var(--surf);
+    border: 1px solid var(--line)
+}
+
+.stat b {
+    font-size: 26px;
+    display: block;
+    font-weight: 600
+}
+
+.stat span {
+    font-size: 13px;
+    color: var(--muted)
+}
+
+a.btn {
+    text-decoration: none;
+    display: inline-block
+}
+
+.acts {
+    align-items: center;
+    margin-top: 6px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end
+}
+
+.tools {
+    margin-bottom: 16px;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px
+}
+
+.chip {
+    padding: 4px 13px;
+    color: var(--ink);
+    border-radius: 99px;
+    text-decoration: none;
+    font-size: 14px;
+    background: var(--surf);
+    border: 1px solid var(--line)
+}
+
+.chip.on {
+    color: #fff;
+    background: var(--pri);
+    border-color: var(--pri)
+}
+
+.row {
+    background: var(--surf);
+    text-decoration: none;
+    padding: 12px 16px;
+    color: inherit;
+    grid-template-columns: 2fr 1.1fr 1fr 1.6fr;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: 12px;
+    align-items: center
+}
+
+.row.h {
+    padding-top: 0;
+    font-size: 13px;
+    color: var(--muted);
+    background: none
+}
+
+a.row:hover {
+    background: #EEF3FA
+}
+
+.sub {
+    font-size: 13px;
+    display: block;
+    color: var(--muted)
+}
+
+.badge {
+    font-weight: 500;
+    display: inline-flex;
+    font-size: 13px;
+    gap: 6px;
+    align-items: center
+}
+
+.badge::before {
+    background: var(--c);
+    width: 8px;
+    content: "";
+    height: 8px;
+    border-radius: 50%
+}
+
+.empty {
+    color: var(--muted);
+    padding: 28px 0
+}
+
+.back {
+    display: inline-block;
+    color: var(--pri);
+    margin-bottom: 14px;
+    text-decoration: none;
+    font-weight: 500
+}
+
+.ficha {
+    gap: 40px;
+    grid-template-columns: 1fr 1fr;
+    display: grid
+}
+
+.full {
+    grid-column: 1/-1
+}
+
+dl {
+    grid-template-columns: 130px 1fr;
+    display: grid;
+    margin: 0;
+    gap: 9px 12px
+}
+
+dt {
+    color: var(--muted)
+}
+
+dd {
+    margin: 0
+}
+
+.note {
+    margin-bottom: 14px;
+    padding: 2px 0 2px 14px;
+    border-left: 2px solid var(--line);
+    white-space: pre-wrap
+}
+
+.note small {
+    color: var(--muted)
+}
+
+.doc {
+    border-bottom: 1px solid var(--line);
+    padding: 10px 0;
+    gap: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+@media(max-width:760px) {
+    .app {
+        grid-template-columns: 1fr
+    }
+
+    aside {
+        padding: 12px;
+        position: static;
+        flex-direction: row;
+        height: auto;
+        flex-wrap: wrap
+    }
+
+    .brand {
+        padding: 4px 10px;
+        width: 100%
+    }
+
+    aside .soon {
+        display: none
+    }
+
+    aside form {
+        width: auto;
+        margin: 0 0 0 auto
+    }
+
+    .row {
+        grid-template-columns: 1.6fr 1fr
+    }
+
+    .row>:nth-child(n+3) {
+        display: none
+    }
+
+    .ficha {
+        gap: 28px;
+        grid-template-columns: 1fr
+    }
+}
