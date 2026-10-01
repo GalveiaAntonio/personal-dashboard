@@ -2,8 +2,8 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-const ativos = [{ href: '/', nome: 'Início' }, { href: '/clientes', nome: 'Clientes' }]
-const brevemente = ['Leads', 'Projetos', 'Tarefas', 'Propostas', 'Faturas', 'Despesas']
+const ativos = [{ href: '/', nome: 'Início' }, { href: '/clientes', nome: 'Clientes' }, { href: '/projetos', nome: 'Projetos' }, { href: '/tarefas', nome: 'Tarefas' }]
+const brevemente = ['Leads', 'Propostas', 'Faturas', 'Despesas']
 
 export default function Nav() {
   const p = usePathname()

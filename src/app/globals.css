@@ -375,6 +375,70 @@ dd {
     align-items: center
 }
 
+.sec {
+    margin-bottom: 28px
+}
+
+.sec>h2 {
+    margin-bottom: 8px
+}
+
+.tarefa {
+    padding: 10px 12px;
+    background: var(--surf);
+    display: grid;
+    gap: 12px;
+    align-items: center;
+    grid-template-columns: auto 1fr auto auto;
+    border-bottom: 1px solid var(--line)
+}
+
+.check {
+    border-radius: 5px;
+    width: 22px;
+    cursor: pointer;
+    height: 22px;
+    padding: 0;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1;
+    background: #fff;
+    border: 1.5px solid var(--muted)
+}
+
+.check.on {
+    border-color: var(--pri);
+    background: var(--pri)
+}
+
+.feita {
+    color: var(--muted);
+    text-decoration: line-through
+}
+
+.atraso {
+    color: var(--danger)
+}
+
+.bar {
+    margin-bottom: 2px;
+    height: 6px;
+    overflow: hidden;
+    background: var(--line);
+    border-radius: 99px
+}
+
+.bar i {
+    background: var(--pri);
+    display: block;
+    height: 100%
+}
+
+.row.p {
+    grid-template-columns: 2fr 1.1fr 1fr 1fr 1.2fr
+}
+
+
 @media(max-width:760px) {
     .app {
         grid-template-columns: 1fr
@@ -413,5 +477,17 @@ dd {
     .ficha {
         gap: 28px;
         grid-template-columns: 1fr
+    }
+
+    .row.p {
+        grid-template-columns: 1.6fr 1fr
+    }
+
+    .tarefa {
+        grid-template-columns: auto 1fr auto
+    }
+
+    .tarefa .badge {
+        display: none
     }
 }
