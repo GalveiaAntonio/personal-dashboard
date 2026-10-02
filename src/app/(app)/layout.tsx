@@ -1,6 +1,8 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
 import Nav from '@/components/Nav'
+import Avatar from '@/components/Avatar'
+import Pesquisa from '@/components/Pesquisa'
 
 async function sair() {
   'use server'
@@ -12,9 +14,10 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="app">
       <aside>
-        <div className="brand">Painel</div>
+        <div className="top"><Avatar /></div>
+        <Pesquisa />
         <Nav />
-        <form action={sair}><button className="lnk">Terminar sessão</button></form>
+        <form action={sair} className="out"><button className="lnk">Terminar Sessão</button></form>
       </aside>
       <main>{children}</main>
     </div>

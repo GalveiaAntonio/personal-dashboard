@@ -1,12 +1,13 @@
 :root {
-    --bg: #F3F5F8;
-    --ink: #152233;
-    --pri: #1F5FBF;
-    --navy: #0E2942;
-    --surf: #fff;
-    --danger: #C0392B;
-    --muted: #5F6E80;
-    --line: #DCE2EA
+    --bg: #202020;
+    --ink: #EDEDED;
+    --pri: #E8E8E8;
+    --navy: #1B1B1B;
+    --surf: #272727;
+    --danger: #F0645A;
+    --muted: #8A8A8A;
+    --line: #343434;
+    color-scheme: dark
 }
 
 *,
@@ -15,11 +16,15 @@
     box-sizing: border-box
 }
 
-body {
-    color: var(--ink);
-    font: 400 15px/1.5 var(--font-body), system-ui, sans-serif;
-    margin: 0;
+html {
     background: var(--bg)
+}
+
+body {
+    font: 400 15px/1.5 var(--font-body), system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    margin: 0
 }
 
 h1,
@@ -29,11 +34,11 @@ h2 {
 }
 
 h1 {
-    font-size: 24px
+    font-size: 20px
 }
 
 h2 {
-    font-size: 18px
+    font-size: 17px
 }
 
 button,
@@ -50,39 +55,39 @@ textarea {
 }
 
 .btn {
-    text-decoration: none;
     padding: 8px 16px;
-    cursor: pointer;
-    border-radius: 6px;
-    display: inline-block;
+    text-decoration: none;
     font-weight: 500;
+    cursor: pointer;
     background: var(--pri);
-    color: #fff;
+    border-radius: 6px;
+    color: var(--bg);
+    display: inline-block;
     border: 0
 }
 
 .btn:hover {
-    background: var(--navy)
+    background: #fff
 }
 
 .btn.ghost {
     border: 1px solid var(--line);
-    background: var(--surf);
-    color: var(--ink)
+    color: var(--ink);
+    background: transparent
 }
 
 .btn.ghost:hover {
-    background: #EEF3FA
+    background: #2F2F2F
 }
 
 input,
 select,
 textarea {
     padding: 8px 12px;
-    background: #fff;
     border-radius: 6px;
     width: 100%;
-    border: 1px solid var(--line)
+    border: 1px solid var(--line);
+    background: var(--surf)
 }
 
 label {
@@ -92,23 +97,23 @@ label {
 }
 
 label span {
-    margin-bottom: 4px;
-    display: block;
     font-size: 13px;
-    color: var(--muted)
+    margin-bottom: 4px;
+    color: var(--muted);
+    display: block
 }
 
 .login {
     padding: 24px;
-    min-height: 100vh;
+    display: grid;
     place-items: center;
-    display: grid
+    min-height: 100vh
 }
 
 .login form {
     padding: 32px;
-    border-radius: 8px;
     width: min(360px, 100%);
+    border-radius: 8px;
     background: var(--surf);
     border: 1px solid var(--line)
 }
@@ -125,109 +130,188 @@ label span {
 
 .login p.erro,
 .erro {
+    font-size: 14px;
     margin: 0 0 12px;
-    color: var(--danger);
-    font-size: 14px
+    color: var(--danger)
 }
 
 .app {
     min-height: 100vh;
-    display: grid;
-    grid-template-columns: 232px 1fr
+    grid-template-columns: 224px 1fr;
+    display: grid
 }
 
 aside {
+    height: 100vh;
     gap: 2px;
-    padding: 24px 14px;
-    background: var(--navy);
-    color: #F3F5F8;
     position: sticky;
     top: 0;
-    height: 100vh;
     display: flex;
-    flex-direction: column
+    flex-direction: column;
+    padding: 16px 12px;
+    background: var(--navy);
+    border-right: 1px solid #2A2A2A
 }
 
-.brand {
-    padding: 0 10px 22px;
-    font-size: 20px;
-    font-weight: 700
+.top {
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
 }
 
-aside a,
-aside button.lnk {
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
+.avatar {
+    background: #D9D9D9 center/cover no-repeat;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%
+}
+
+.srch {
+    margin-bottom: 18px;
+    position: relative
+}
+
+.srch input {
+    font-size: 13px;
+    padding: 6px 66px 6px 10px;
+    background: transparent
+}
+
+.srch kbd {
+    padding: 2px 6px;
+    background: #333;
+    color: var(--muted);
+    right: 8px;
+    top: 6px;
+    position: absolute;
+    font: 10px var(--font-body), sans-serif;
+    border-radius: 4px
+}
+
+#gres {
+    overflow: auto;
+    z-index: 20;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 320px;
+    margin-top: 4px;
+    background: #2A2A2A;
+    border: 1px solid var(--line);
+    position: absolute;
+    border-radius: 6px
+}
+
+#gres a {
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--ink);
+    display: block;
+    padding: 8px 10px
+}
+
+#gres a:hover {
+    background: #333
+}
+
+#gres small {
+    color: var(--muted)
+}
+
+#gres .vazio {
     padding: 8px 10px;
-    background: none;
-    color: #F3F5F8cc;
-    border: 0;
+    font-size: 13px;
+    color: var(--muted)
+}
+
+aside a {
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 8px 10px;
     border-radius: 6px;
     display: flex;
-    justify-content: space-between;
-    text-decoration: none
+    align-items: center;
+    gap: 10px
 }
 
-aside a:hover,
-aside button.lnk:hover {
-    background: #ffffff14
+aside a:hover {
+    background: #2A2A2A
 }
 
 aside a.on {
     font-weight: 500;
-    color: #fff;
-    background: var(--pri)
+    background: #2A2A2A
 }
 
 aside .soon {
+    font-size: 14px;
     padding: 8px 10px;
+    opacity: .45;
     display: flex;
-    justify-content: space-between;
-    opacity: .5
+    align-items: center;
+    gap: 10px
 }
 
-aside small {
-    font-size: 12px
+.lbl {
+    padding: 14px 10px 6px;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .06em
 }
 
-aside form {
+aside .out {
     margin-top: auto
 }
 
+aside .lnk {
+    padding: 8px 10px;
+    text-align: left;
+    background: none;
+    border: 0;
+    color: var(--muted);
+    font-size: 12px;
+    cursor: pointer
+}
+
+aside .lnk:hover {
+    color: var(--ink)
+}
+
 main {
+    min-width: 0;
     width: 100%;
-    padding: 36px clamp(20px, 4vw, 52px) 60px;
-    max-width: 1040px
+    padding: 28px clamp(20px, 3vw, 40px) 60px
 }
 
 .head {
-    flex-wrap: wrap;
+    margin-bottom: 24px;
     gap: 12px;
     display: flex;
-    margin-bottom: 24px;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between
 }
 
 .stats {
+    gap: 12px;
     margin-bottom: 34px;
     display: grid;
-    gap: 12px;
     grid-template-columns: repeat(auto-fit, minmax(130px, 1fr))
 }
 
 .stat {
     padding: 14px 16px;
-    border-radius: 6px;
     background: var(--surf);
+    border-radius: 6px;
     border: 1px solid var(--line)
 }
 
 .stat b {
+    font-weight: 600;
     font-size: 26px;
-    display: block;
-    font-weight: 600
+    display: block
 }
 
 .stat span {
@@ -235,85 +319,80 @@ main {
     color: var(--muted)
 }
 
-a.btn {
-    text-decoration: none;
-    display: inline-block
-}
-
 .acts {
-    align-items: center;
     margin-top: 6px;
     display: flex;
+    align-items: center;
     gap: 10px;
     justify-content: flex-end
 }
 
 .tools {
     margin-bottom: 16px;
-    align-items: center;
+    gap: 10px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px
+    align-items: center;
+    flex-wrap: wrap
 }
 
 .chip {
     padding: 4px 13px;
-    color: var(--ink);
-    border-radius: 99px;
     text-decoration: none;
+    color: var(--ink);
     font-size: 14px;
-    background: var(--surf);
-    border: 1px solid var(--line)
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 99px
 }
 
 .chip.on {
-    color: #fff;
-    background: var(--pri);
-    border-color: var(--pri)
+    color: var(--bg);
+    border-color: var(--pri);
+    background: var(--pri)
 }
 
 .row {
-    background: var(--surf);
-    text-decoration: none;
     padding: 12px 16px;
-    color: inherit;
-    grid-template-columns: 2fr 1.1fr 1fr 1.6fr;
-    border-bottom: 1px solid var(--line);
     display: grid;
+    grid-template-columns: 2fr 1.1fr 1fr 1.6fr;
     gap: 12px;
-    align-items: center
+    align-items: center;
+    background: var(--surf);
+    border-bottom: 1px solid var(--line);
+    color: inherit;
+    text-decoration: none
 }
 
 .row.h {
     padding-top: 0;
-    font-size: 13px;
     color: var(--muted);
+    font-size: 13px;
     background: none
 }
 
 a.row:hover {
-    background: #EEF3FA
+    background: #2F2F2F
 }
 
 .sub {
-    font-size: 13px;
     display: block;
-    color: var(--muted)
+    color: var(--muted);
+    font-size: 13px
 }
 
 .badge {
+    gap: 6px;
+    font-size: 13px;
     font-weight: 500;
     display: inline-flex;
-    font-size: 13px;
-    gap: 6px;
     align-items: center
 }
 
 .badge::before {
-    background: var(--c);
+    height: 8px;
     width: 8px;
     content: "";
-    height: 8px;
+    background: var(--c);
     border-radius: 50%
 }
 
@@ -323,17 +402,17 @@ a.row:hover {
 }
 
 .back {
-    display: inline-block;
-    color: var(--pri);
     margin-bottom: 14px;
+    display: inline-block;
     text-decoration: none;
+    color: var(--ink);
     font-weight: 500
 }
 
 .ficha {
     gap: 40px;
-    grid-template-columns: 1fr 1fr;
-    display: grid
+    display: grid;
+    grid-template-columns: 1fr 1fr
 }
 
 .full {
@@ -341,10 +420,10 @@ a.row:hover {
 }
 
 dl {
-    grid-template-columns: 130px 1fr;
+    gap: 9px 12px;
     display: grid;
-    margin: 0;
-    gap: 9px 12px
+    grid-template-columns: 130px 1fr;
+    margin: 0
 }
 
 dt {
@@ -367,12 +446,12 @@ dd {
 }
 
 .doc {
-    border-bottom: 1px solid var(--line);
     padding: 10px 0;
-    gap: 10px;
     display: flex;
+    gap: 10px;
+    align-items: center;
     justify-content: space-between;
-    align-items: center
+    border-bottom: 1px solid var(--line)
 }
 
 .sec {
@@ -385,25 +464,25 @@ dd {
 
 .tarefa {
     padding: 10px 12px;
-    background: var(--surf);
     display: grid;
+    grid-template-columns: auto 1fr auto auto;
     gap: 12px;
     align-items: center;
-    grid-template-columns: auto 1fr auto auto;
+    background: var(--surf);
     border-bottom: 1px solid var(--line)
 }
 
 .check {
-    border-radius: 5px;
-    width: 22px;
-    cursor: pointer;
     height: 22px;
+    width: 22px;
     padding: 0;
-    color: #fff;
+    cursor: pointer;
     font-size: 14px;
     line-height: 1;
-    background: #fff;
-    border: 1.5px solid var(--muted)
+    color: var(--bg);
+    background: var(--surf);
+    border: 1.5px solid var(--muted);
+    border-radius: 5px
 }
 
 .check.on {
@@ -429,15 +508,14 @@ dd {
 }
 
 .bar i {
-    background: var(--pri);
+    height: 100%;
     display: block;
-    height: 100%
+    background: var(--pri)
 }
 
 .row.p {
     grid-template-columns: 2fr 1.1fr 1fr 1fr 1.2fr
 }
-
 
 @media(max-width:760px) {
     .app {
@@ -446,27 +524,28 @@ dd {
 
     aside {
         padding: 12px;
+        height: auto;
         position: static;
         flex-direction: row;
-        height: auto;
         flex-wrap: wrap
     }
 
-    .brand {
-        padding: 4px 10px;
+    .top,
+    .srch {
         width: 100%
     }
 
+    .lbl,
     aside .soon {
         display: none
     }
 
-    aside form {
-        width: auto;
+    aside .out {
         margin: 0 0 0 auto
     }
 
-    .row {
+    .row,
+    .row.p {
         grid-template-columns: 1.6fr 1fr
     }
 
@@ -477,10 +556,6 @@ dd {
     .ficha {
         gap: 28px;
         grid-template-columns: 1fr
-    }
-
-    .row.p {
-        grid-template-columns: 1.6fr 1fr
     }
 
     .tarefa {
